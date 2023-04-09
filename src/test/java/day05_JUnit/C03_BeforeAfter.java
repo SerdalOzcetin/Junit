@@ -24,12 +24,13 @@ public class C03_BeforeAfter {
     }
     @Test
     public void Test01(){
+
         driver.get("https://amazon.com/");
     }
 
     @Test
     public void Test02(){
-        driver.get("https://www.techproeducation.com/");
+        driver.get("https://www.walmart.com/");
 
     }
 }

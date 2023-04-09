@@ -1,4 +1,4 @@
-package day09;
+package day09_tp;
 import org.junit.Test;
 import org.openqa.selenium.Cookie;
 import utilities.TestBase;
@@ -22,7 +22,7 @@ public class C04_Cookies extends TestBase {
         }
         System.out.println("COKKIEYI ISMIYLE CAGIRIYORUM : "+driver.manage().getCookieNamed("i18n-prefs"));
 //        4. Yeni bir cookie ekle
-        Cookie favoriCookiem= new Cookie("cikolatam","antem-fistikli-cikolata");
+        Cookie favoriCookiem= new Cookie("cikolatam","antep-fistikli-cikolata");
         driver.manage().addCookie(favoriCookiem);
         waitFor(3);
         for (Cookie eachCookie : allCookies){

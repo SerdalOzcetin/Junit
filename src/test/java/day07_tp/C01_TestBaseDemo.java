@@ -1,4 +1,4 @@
-package day07;
+package day07_tp;
 
 import org.junit.Assert;
 import org.junit.Test;
