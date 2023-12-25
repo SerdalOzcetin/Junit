@@ -27,11 +27,11 @@ Ayni sayfada tekrar Enroll Free elementi gorunur olacak sekilde scroll et ve ekr
         waitFor(3);
 
 //        2. JS executor objesi olustur
-        JavascriptExecutor js = (JavascriptExecutor)driver;
+        JavascriptExecutor js = (JavascriptExecutor) driver;
 
 //        3. Yapmak istedigim islemi js.executeScript metot u ile yap
 //        scrollIntoView(true); metotu belirli bir elemente scroll yapmak icin kullanilir
-        js.executeScript("arguments[0].scrollIntoView(true);",weOffer);
+        js.executeScript("arguments[0].scrollIntoView(true);", weOffer);
         waitFor(3);
 
         takeScreenShotOfPage();
@@ -45,7 +45,7 @@ Ayni sayfada tekrar Enroll Free elementi gorunur olacak sekilde scroll et ve ekr
         waitFor(3);
         takeScreenShotOfPage();
 
- //       ayni sayfada Enroll Free elementi gorunur olacak sekilde scroll et ve ekran gorumtusunu al
+        //       ayni sayfada Enroll Free elementi gorunur olacak sekilde scroll et ve ekran gorumtusunu al
         scrollIntoViewJS(driver.findElement(By.xpath("//span[.='Enroll Free Course']")));
         waitFor(3);
         takeScreenShotOfPage();

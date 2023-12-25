@@ -11,7 +11,7 @@ import javax.swing.*;
 
 public class C02_Actions extends TestBase {
     @Test
-    public void test01(){
+    public void test01() {
         /*
 MANUAL:
 1. Amazon home sayfasina git
@@ -26,15 +26,15 @@ MANUAL:
         driver.get("https://www.amazon.com/");
 
         // 1-ACTION OBJESI OLUSTUR
-        Actions actions=new Actions(driver);
+        Actions actions = new Actions(driver);
 
         // 2-ELEMANI BUL
-        WebElement accountList= driver.findElement(By.id("nav-link-accountList"));
+        WebElement accountList = driver.findElement(By.id("nav-link-accountList"));
 
         // 2-UYGUN ACTIONS METHODUNU KULLAN. EN SONRA PERFORM KULLANMAYI UNUTMA
         //Sag ust bolumde bulunan “Account & Lists” menüsüne git
         actions.moveToElement(accountList).perform();
-        waitFor(3);
+        waitFor(1);
 
         //“Account” secenegine tikka
         driver.findElement(By.linkText("Account")).click();

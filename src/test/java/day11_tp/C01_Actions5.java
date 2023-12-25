@@ -9,7 +9,7 @@ import utilities.TestBase;
 
 public class C01_Actions5 extends TestBase {
     @Test
-    public void test01(){
+    public void test01() {
 
         //Google a gidin https://www.google.com
         driver.get("https://www.google.com");
@@ -18,15 +18,15 @@ public class C01_Actions5 extends TestBase {
         //‘ cok pahali!’ Yazdır (SHIFT TUSUNA BASILMAYARAK)
         //Ve ENTER tusuna bas
 
-        WebElement aramaKutusu= driver.findElement(By.name("q"));
+        WebElement aramaKutusu = driver.findElement(By.name("q"));
         //aramaKutusu.sendKeys("iPhone X fiyatlari"+ Keys.ENTER);
 
-        Actions actions=new Actions(driver);
+        Actions actions = new Actions(driver);
         actions.
-                keyDown(aramaKutusu,Keys.SHIFT). //arama kutusunun ustunde shift tusuna bas
+                keyDown(aramaKutusu, Keys.SHIFT). //arama kutusunun ustunde shift tusuna bas
                 sendKeys("iPhone X fiyatlari").  // shifte basiliyken yazi yaz
-                keyUp(aramaKutusu,Keys.SHIFT).   // shift e artik basma
-                sendKeys(" cok pahali!"+Keys.ENTER).// normal halde yaz ve enter tusuna bas
+                keyUp(aramaKutusu, Keys.SHIFT).   // shift e artik basma
+                sendKeys(" cok pahali!" + Keys.ENTER).// normal halde yaz ve enter tusuna bas
                 build().//birden fazla actions methodu kullanildiginda build() kullanilmasi onerilir.
                 perform();
 

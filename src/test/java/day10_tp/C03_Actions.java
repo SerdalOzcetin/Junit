@@ -21,23 +21,19 @@ public class C03_Actions extends TestBase {
 //        actions.sendKeys(Keys.PAGE_DOWN).perform();
 //        waitFor(2);
 //        actions.sendKeys(Keys.PAGE_DOWN).perform();
-        actions.sendKeys(Keys.PAGE_DOWN)
-                .sendKeys(Keys.PAGE_DOWN)
-                .sendKeys(Keys.PAGE_DOWN).perform();
+        actions.sendKeys(Keys.PAGE_DOWN,Keys.PAGE_DOWN,Keys.PAGE_DOWN).perform();
 
         //ARROW_DOWN PAGE_DOWN DAHA AZ MESAFE ALDIRIR. ARROW_DOWN oklarla asagi indir
         actions.sendKeys(Keys.ARROW_DOWN).perform();
-        waitFor(3);
+        waitFor(1);
 
         //Sonra sayfanin ustune dogru gidelim
         //YUKARI CIK PAGE_UP
         actions.sendKeys(Keys.PAGE_UP).perform();
-        waitFor(3);
+        waitFor(1);
 
         //YUKARI CIK ARROW_UP
         actions.sendKeys(Keys.ARROW_UP).perform();
-        waitFor(3);
-
 
     }
 }

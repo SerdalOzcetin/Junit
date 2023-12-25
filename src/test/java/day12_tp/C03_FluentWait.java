@@ -23,15 +23,15 @@ public class C03_FluentWait extends TestBase {
 
         //Hello World! Yazının sitede oldugunu test et
         // 1.Fluent Wait icin bir obje olustur
-        Wait<WebDriver> wait= new FluentWait<>(driver).
+        Wait<WebDriver> wait = new FluentWait<>(driver).
                 withTimeout(Duration.ofSeconds(30)). //MAX BEKLEME SURESI
                         pollingEvery(Duration.ofSeconds(3)). //DENEME ARALIKLARI
                         withMessage("IGNORE EXCEPTION"). //MESAJ YAZDIRABILIRIM.ZORUNLU DEGIL
                         ignoring(NoSuchMethodException.class);// EXCEPTION I HANDLE ET. ZORUNLU DEGIL
 
         // 2. wait objesini kullanarak bekleme problemini coz
-        WebElement helloWorldElement= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='finish']//h4")));
-        String helloWorldText=helloWorldElement.getText();
-        Assert.assertEquals("Hello World!",helloWorldText);
+        WebElement helloWorldElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='finish']//h4")));
+        String helloWorldText = helloWorldElement.getText();
+        Assert.assertEquals("Hello World!", helloWorldText);
     }
 }

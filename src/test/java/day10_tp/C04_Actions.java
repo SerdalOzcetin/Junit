@@ -1,4 +1,4 @@
-package day10;
+package day10_tp;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -62,7 +62,7 @@ public class C04_Actions extends TestBase {
         Actions actions = new Actions(driver);
         actions.
                 clickAndHold(kaynak).//kaynagi tikla ve tut
-                moveByOffset(430,30). //bu koordinatlara surukle
+                moveByOffset(150, 30). //bu koordinatlara surukle
                 release(). // birak
                 build().//birbirine bagla
                 perform();//islemi yap

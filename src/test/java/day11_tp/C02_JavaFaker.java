@@ -7,21 +7,21 @@ public class C02_JavaFaker {
 
 
     @Test
-    public void javaFakerTest(){
+    public void javaFakerTest() {
         //1-FAKER OBJESI OLUSTUR
-       Faker faker=new Faker();
+        Faker faker = new Faker();
 
-       //2-FAKER OBJESI ILE FAKE DATA OLUSTUR
+        //2-FAKER OBJESI ILE FAKE DATA OLUSTUR
         //first name datasi
         String firstName = faker.name().firstName();
         System.out.println(firstName);
 
         //last name datasi
-        String lastName= faker.name().lastName();
+        String lastName = faker.name().lastName();
         System.out.println(lastName);
 
         //kullanici adi
-        String userName= faker.name().username();
+        String userName = faker.name().username();
         System.out.println(userName);
 
         //meslek ismi

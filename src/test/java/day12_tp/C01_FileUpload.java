@@ -17,7 +17,7 @@ public class C01_FileUpload extends TestBase {
         WebElement dosyaSec = driver.findElement(By.id("file-upload"));
 
         //Yuklemek istediginiz dosyayi secelim.
-        String path =System.getProperty("user.home")+"/Desktop/logo.jpeg";
+        String path =System.getProperty("user.home")+"/Desktop/7.jpg";
         dosyaSec.sendKeys(path);
 
         //Upload butonuna basalim.
@@ -26,7 +26,7 @@ public class C01_FileUpload extends TestBase {
         //“File Uploaded!” textinin goruntulendigini test edelim.
         String uploadYazisi= driver.findElement(By.xpath("//h3")).getText();
         Assert.assertEquals("File Uploaded!",uploadYazisi);
-        waitFor(3);
+        waitFor(1);
     }
 }
 

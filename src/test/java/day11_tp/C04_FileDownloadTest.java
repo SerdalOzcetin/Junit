@@ -10,16 +10,16 @@ import java.nio.file.Paths;
 
 public class C04_FileDownloadTest extends TestBase {
     @Test
-    public void fileDownloadTest(){
+    public void fileDownloadTest() {
 
         //https://testcenter.techproeducation.com/index.php?page=file-download   adresine gidelim.
         driver.get("https://testcenter.techproeducation.com/index.php?page=file-download");
         driver.findElement(By.partialLinkText("b10 all test cases")).click();
-        waitFor(3);
+        waitFor(1);
 
         //b10 all test cases dosyasını indirelim
         //Dosyanın başarıyla indirilip indirilmediğini test edelim
-        String filePath = System.getProperty("user.home")+"/Downloads/b10 all test cases, code.docx";
+        String filePath = System.getProperty("user.home") + "/Downloads/b10 all test cases, code.docx";
         boolean indirildimi = Files.exists(Paths.get(filePath));
         Assert.assertTrue(indirildimi);
     }

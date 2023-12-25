@@ -10,7 +10,7 @@ public class C04_Cookies extends TestBase {
     @Test
     public void handleCookiesTest() {
 //        Amazona git
-        driver.get("https://www.amazon.com");
+        driver.get("https://www.github.com");
         waitFor(3);
 //        1.toplam cookie sayisini bul
         Set<Cookie> allCookies = driver.manage().getCookies(); // toplam cerez sayisi
@@ -23,7 +23,7 @@ public class C04_Cookies extends TestBase {
             System.out.println("COOKIE : " + eachCookie);//COOKIE NIN TAMAMINI YAZDIK
             System.out.println("COOKIE ISIMLERI : " + eachCookie.getName());
         }
-        System.out.println("COKKIEYI ISMIYLE CAGIRIYORUM : " + driver.manage().getCookieNamed("csm-sid"));
+        System.out.println("COKKIEYI ISMIYLE CAGIRIYORUM : " + driver.manage().getCookieNamed("preferred_color_mode"));
 //        4. Yeni bir cookie ekle
         Cookie favoriCookiem = new Cookie("cikolatam", "antep-fistikli-cikolata");
         driver.manage().addCookie(favoriCookiem);
