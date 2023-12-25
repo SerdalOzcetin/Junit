@@ -1,4 +1,5 @@
 package day07;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,32 +18,32 @@ public class HomeWorkIframe extends TestBase {
     public void test01() throws InterruptedException {
         //Bir class olusturun: IframeOdev
         //https://the-internet.herokuapp.com/iframe  sitesine gidiniz
-       driver.get("https://the-internet.herokuapp.com/iframe");
+        driver.get("https://the-internet.herokuapp.com/iframe");
 
         //sayfadaki toplam iframe sayısını bulunuz.
         List<WebElement> iframeList = driver.findElements(By.tagName("iframe"));
-        int iframeSize= iframeList.size();
-        System.out.println("Toplam iframe sayisi = "+ iframeSize);
+        int iframeSize = iframeList.size();
+        System.out.println("Toplam iframe sayisi = " + iframeSize);
 
         //Sayfa basliginda ‘Editor’ yazını içerdiğini test edelim.
-        String actualTitle= driver.findElement(By.xpath("//h3")).getText();
+        String actualTitle = driver.findElement(By.xpath("//h3")).getText();
         Assert.assertTrue(actualTitle.contains("Editor"));
-        Thread.sleep(3000);
+        Thread.sleep(1000);
 
         //Paragrafdaki yaziyi silelim
         driver.switchTo().frame(0);
-        WebElement paragrafYazisi= driver.findElement(By.xpath("//p[text()='Your content goes here.']"));
+        WebElement paragrafYazisi = driver.findElement(By.xpath("//p[text()='Your content goes here.']"));
         paragrafYazisi.clear();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
 
         //Sonrasinda paragrafa “iframein icindeyim” yazisini yazdıralım
-        paragrafYazisi.sendKeys("iframein icindeyim");
-        Thread.sleep(3000);
+        paragrafYazisi.sendKeys("iframe'in icindeyim");
+        Thread.sleep(1000);
 
         //Alt kısımdaki yazının ‘Elemental Selenium’ yazisini içerdiğini test edelim...
 
         driver.switchTo().parentFrame();
-        String parentYazi= driver.findElement(By.xpath("//*[.='Elemental Selenium']")).getText();
+        String parentYazi = driver.findElement(By.xpath("//*[.='Elemental Selenium']")).getText();
         Assert.assertTrue(parentYazi.contains("Elemental Selenium"));
 
     }

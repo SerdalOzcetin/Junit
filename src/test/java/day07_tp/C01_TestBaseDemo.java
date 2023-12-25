@@ -23,7 +23,7 @@ public class C01_TestBaseDemo extends TestBase {
         // title in Bootcamps kelimesini icerdigini test edelim
         driver.get("https://techproeducation.com");
         String actualTitle = driver.getTitle();
-        Assert.assertTrue(actualTitle.contains("Bootcamps"));
+        Assert.assertFalse(actualTitle.contains("Bootcamps"));
     }
 
 

@@ -8,23 +8,23 @@ import utilities.TestBase;
 
 public class C05_Iframe extends TestBase {
     @Test
-    public void test01(){
+    public void test01() {
         // https://testcenter.techproeducation.com/index.php?page=iframe
         driver.get("https://testcenter.techproeducation.com/index.php?page=iframe");
 
         //Ana sayfadaki An iframe with a thin black border: metin black border yazisinin oldugunu test edelim
-        String anaMetin= driver.findElement(By.xpath("//p[.='An iframe with a thin black border:']")).getText();
+        String anaMetin = driver.findElement(By.xpath("//p[.='An iframe with a thin black border:']")).getText();
         //tag[.='metin']; Bana bu tagli metni ver
         //tag[text()='metin'];
-        String expectedText="black border";
+        String expectedText = "black border";
         Assert.assertTrue(anaMetin.contains(expectedText));
 
         //Ayrica 'Applications lists' yazisinin oldugunu test edelim
         //     -Application lists iframe in icinde oldugu icin switch le icine girmeliyiz
         driver.switchTo().frame(0); //index 0'dan baslar.Ilk iframe e switch yapiyoruz.
-        String icMetin= driver.findElement(By.xpath("//*[.='Applications lists']")).getText();
-        String expectedIcMetin= "Applications lists";
-        Assert.assertEquals(expectedIcMetin,icMetin);
+        String icMetin = driver.findElement(By.xpath("//*[.='Applications lists']")).getText();
+        String expectedIcMetin = "Applications lists";
+        Assert.assertEquals(expectedIcMetin, icMetin);
 
         //Ana sayfadaki 'Povered By' yazisinin varligini testedelim
         driver.switchTo().parentFrame();
@@ -51,8 +51,6 @@ Iframe. Cozum : switch to iframe
 Alert. Cozum : switch to alert
 New window(Yeni pencere) : switch to window
          */
-
-
 
 
     }

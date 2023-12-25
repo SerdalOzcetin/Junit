@@ -17,31 +17,20 @@ public class HomeWorkHandleWindows extends TestBase {
     @Test
     public void test01() throws InterruptedException {
         driver.get("https://testcenter.techproeducation.com/index.php?page=multiple-windows");
-        String actualTitle=  driver.getTitle();
-        Assert.assertEquals("Windows",actualTitle);
+        String actualTitle = driver.getTitle();
+        Assert.assertEquals("Windows", actualTitle);
         //driver.findElement(By.xpath("//*[.='Click Here']"));
         driver.findElement(By.linkText("Click Here")).click();
 
         String window1 = driver.getWindowHandle();
 
-        Set<String> allWindowHandles= driver.getWindowHandles();
-        for (String w:allWindowHandles){
-            if (!w.equals(window1)){
+        Set<String> allWindowHandles = driver.getWindowHandles();
+        for (String w : allWindowHandles) {
+            if (!w.equals(window1)) {
                 driver.switchTo().window(w);
             }
         }
-        Assert.assertEquals("New Window",driver.getTitle());
-
-
-
-
-
-
-
-
-
-
-
+        Assert.assertEquals("New Window", driver.getTitle());
 
 
 //        String actualTitle= driver.getTitle();

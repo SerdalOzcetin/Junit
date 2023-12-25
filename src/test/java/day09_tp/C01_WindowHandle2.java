@@ -1,4 +1,4 @@
-package day09;
+package day09_tp;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -13,28 +13,25 @@ public class C01_WindowHandle2 extends TestBase {
         driver.get("https://the-internet.herokuapp.com/windows");
 
         //Sayfadaki textin “Opening a new window” olduğunu doğrulayın.
-        String anaText= driver.findElement(By.xpath("//h3")).getText();
-        Assert.assertEquals("Opening a new window",anaText);
+        String anaText = driver.findElement(By.xpath("//h3")).getText();
+        Assert.assertEquals("Opening a new window", anaText);
 
         //Sayfa başlığının(title) “The Internet” olduğunu doğrulayın.
-        String actualTitle= driver.getTitle();
-        String expectedTitle="The Internet";
-        Assert.assertEquals(expectedTitle,actualTitle);
-
-        String window1Handle= driver.getWindowHandle();
+        String actualTitle = driver.getTitle();
+        String expectedTitle = "The Internet";
+        Assert.assertEquals(expectedTitle, actualTitle);
 
         //Click Here butonuna basın.
         driver.findElement(By.linkText("Click Here")).click();
-        waitFor(3);
+        waitFor(1);
 
         //2.PENCERE ACILIR VE 2.PENCEREDE ISLEM YAPMAK ISTEDIGIMDEN , O PENCEREYE SWITCH-GECIS YAPMALIYIZ.
         switchToWindow(1);//2.windowa gecis yaptik.Driver artik 2.window da
 
         //Acilan yeni pencerenin sayfa başlığının (title) “New Window” oldugunu dogrulayin.
-        String actualWindow2Title= driver.getTitle();
-        String expectedWindow2Title= "New Window";
-        Assert.assertEquals(expectedWindow2Title,actualWindow2Title);
-
+        String actualWindow2Title = driver.getTitle();
+        String expectedWindow2Title = "New Window";
+        Assert.assertEquals(expectedWindow2Title, actualWindow2Title);
 
 
     }
