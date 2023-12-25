@@ -16,9 +16,10 @@ import java.util.List;
 
 public class C01_DropDown {
     WebDriver driver;
+
     // eger test sınıfında birden fazla method olusturulmusssa @Before kullanılır.
     @Before
-    public void setUp(){
+    public void setUp() {
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -27,7 +28,7 @@ public class C01_DropDown {
     }
 
     @Test
-    public void selectByIndexTest(){
+    public void selectByIndexTest() {
         //Given kullanıcı https://testcenter.techproeducation.com/index.php?page=dropdown  sayfasındayken
 
         //1. LOCATE Dropdown element
@@ -50,24 +51,25 @@ public class C01_DropDown {
 
         // doğum yılını ayını ve gününü su sekılde scer 2000, january, 10
     }
+
     @After
-    public void tearDown(){
+    public void tearDown() {
         driver.close();
     }
+
     @Test
-    public void     printAllTest(){
+    public void printAllTest() {
 
         // tüm eyalet isimlerini konsola yazdır.
         WebElement state = driver.findElement(By.xpath("//select[@id='state']"));
         Select stateDropdown = new Select(state);
         List<WebElement> stateList = stateDropdown.getOptions();
 
-       // for (WebElement eachState : stateList){
-       //     System.out.println(eachState.getText());
+        // for (WebElement eachState : stateList){
+        //     System.out.println(eachState.getText());
         //     }
 
-            stateList.stream().forEach(t-> System.out.println(t.getText()));
-
+        stateList.stream().forEach(t -> System.out.println(t.getText()));
 
 
     }
@@ -89,7 +91,7 @@ public class C01_DropDown {
 
      */
     @Test
-    public void getSelectedOptionsTest(){
+    public void getSelectedOptionsTest() {
         //state dropdown nundaki secili secenegin Select a state oldugunu verify edelim.
 
         WebElement state = driver.findElement(By.xpath("//select[@id='state']"));

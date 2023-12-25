@@ -18,14 +18,13 @@ public class C01_TestBaseDemo extends TestBase {
 
      */
     @Test
-    public void test01(){
+    public void test01() {
         //techproeducation ana sayfasina git ve
         // title in Bootcamps kelimesini icerdigini test edelim
         driver.get("https://techproeducation.com");
-        String actualTitle= driver.getTitle();
+        String actualTitle = driver.getTitle();
         Assert.assertTrue(actualTitle.contains("Bootcamps"));
     }
-
 
 
 }

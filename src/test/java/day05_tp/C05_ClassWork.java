@@ -7,21 +7,26 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 import java.time.Duration;
+
 public class C05_ClassWork {
     WebDriver driver;
+
     @Before
-    public void setup(){
+    public void setup() {
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
+
     @After
     public void tearDown() throws InterruptedException {
         Thread.sleep(3000);
         driver.close();
     }
+
     @Test
     public void test01() throws InterruptedException {
         //Verilen web sayfasına gidin.
@@ -32,11 +37,11 @@ public class C05_ClassWork {
         WebElement checkbox2 = driver.findElement(By.xpath("(//*[@type='checkbox'])[2]"));
         //Checkbox1 seçili değilse onay kutusunu tıklayın
         Thread.sleep(3000);
-        if (!checkbox1.isSelected()){ // Eğer seçili değilse
+        if (!checkbox1.isSelected()) { // Eğer seçili değilse
             checkbox1.click();
         }
         //Checkbox2 seçili değilse onay kutusunu tıklayın
-        if (!checkbox2.isSelected()){
+        if (!checkbox2.isSelected()) {
             checkbox2.click();
         }
     }

@@ -19,34 +19,38 @@ public class C04_BeforeClasAfterClass {
 
     @BeforeClass
 
-    public static void setUp(){
+    public static void setUp() {
         System.out.println("butun testlerden once calıstı");
     }
 
     @AfterClass
-    public static void tearDown(){
+    public static void tearDown() {
         System.out.println("butun testlerden sonra calıstı");
     }
+
     @Before
-    public void setUp2(){
+    public void setUp2() {
         System.out.println("her testten once calısır");
     }
+
     @After
-    public void tearDown2(){
+    public void tearDown2() {
         System.out.println("her testten sonra calsır");
     }
 
     @Test
-    public void test01(){
+    public void test01() {
         System.out.println("fist test");
     }
+
     @Test
-    public void test02(){
+    public void test02() {
         System.out.println("secondTest");
     }
+
     @Test
     @Ignore // eger bır testı calıstırmak ıstemezsek bu seklıde kullanabılırız
-    public void test03(){
+    public void test03() {
         System.out.println("test03");
     }
 }

@@ -11,25 +11,28 @@ import java.time.Duration;
 
 public class C03_BeforeAfter {
     WebDriver driver;
+
     @Before
-    public void setUp(){
+    public void setUp() {
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
+
     @After
-    public void tearDown(){
+    public void tearDown() {
         driver.close();
     }
+
     @Test
-    public void Test01(){
+    public void Test01() {
 
         driver.get("https://amazon.com/");
     }
 
     @Test
-    public void Test02(){
+    public void Test02() {
         driver.get("https://www.walmart.com/");
 
     }

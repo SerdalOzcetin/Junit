@@ -14,8 +14,9 @@ import java.time.Duration;
 public class C05_ClassWork {
 
     WebDriver driver;
+
     @Before
-    public void setUp(){
+    public void setUp() {
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -31,29 +32,28 @@ public class C05_ClassWork {
     @Test
     public void test01() throws InterruptedException {
 
-      //  a. Verilen web sayfasına gidin.
-      //  https://the-internet.herokuapp.com/checkboxes
+        //  a. Verilen web sayfasına gidin.
+        //  https://the-internet.herokuapp.com/checkboxes
         driver.get("https://the-internet.herokuapp.com/checkboxes");
 
-      //  b. Checkbox1 ve checkbox2 elementlerini locate edin.
+        //  b. Checkbox1 ve checkbox2 elementlerini locate edin.
         WebElement checkbox01 = driver.findElement(By.xpath("(//*[@type='checkbox'])[1]"));
         WebElement checkbox02 = driver.findElement(By.xpath("(//*[@type='checkbox'])[2]"));
 
-      //  c. Checkbox1 seçili değilse onay kutusunu tıklayın
+        //  c. Checkbox1 seçili değilse onay kutusunu tıklayın
         Thread.sleep(3000);
-        if (!checkbox01.isSelected()){//secılı degılse
+        if (!checkbox01.isSelected()) {//secılı degılse
             checkbox01.click();
         }
 
 
         //  d. Checkbox2 seçili değilse onay kutusunu tıklayın
-        if (!checkbox02.isSelected()){
+        if (!checkbox02.isSelected()) {
             checkbox02.click();
         }
 
 
     }
-
 
 
 }

@@ -38,9 +38,10 @@ Hata duzeltildiginde tekrar test edilir ve rapor JIRA ya yuklenir
 iii)Rapor hazırlarken, manuel testler icin ekran goruntusunu de JIRA'ya eklemek gerekir
      */
     WebDriver driver;
+
     //Eger test sinifinda birden fazla method olusturulmussa @Before kullanilir
     @Before
-    public void setup(){
+    public void setup() {
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -48,6 +49,7 @@ iii)Rapor hazırlarken, manuel testler icin ekran goruntusunu de JIRA'ya eklemek
         //Given kullanici https://testcenter.techproeducation.com/index.php?page=dropdown sayfasindayken
         driver.get("https://testcenter.techproeducation.com/index.php?page=dropdown");
     }
+
     @Test
     public void selectByIndexText() {
 
@@ -69,29 +71,31 @@ iii)Rapor hazırlarken, manuel testler icin ekran goruntusunu de JIRA'ya eklemek
         Select dayDropDown = new Select(day);
         dayDropDown.selectByVisibleText("10"); // CASE SENSITIVE
     }
-        @Test
-        public void printAllTest(){
-            //Tum eyalet isimlerini konsola yazdir
-            WebElement state= driver.findElement(By.xpath("//select[@id='state']"));
-            Select stateDropdown= new Select(state);
-            List<WebElement> stateList = stateDropdown.getOptions(); //getOption() methodu ile tum state elemanlarini list e koyduk
-            stateList.stream().forEach(t-> System.out.println(t.getText()));// lambda ile print ettik. foreach ile de yapilabilir
-        }
 
-        @Test
-    public void getSelectedOptionsTest(){
-            //State dropdown indaki varsayilan secili secenegin 'Select a State' oldugunu verify(dogrulama) edelim
-            WebElement state= driver.findElement(By.xpath("//select[@id='state']"));
-            Select stateDropdown= new Select(state);
-           String varsayilanText=  stateDropdown.getFirstSelectedOption().getText(); //getFirstSelectedOption() secili olan elementi return eder
-            Assert.assertEquals("Select a State",varsayilanText);
+    @Test
+    public void printAllTest() {
+        //Tum eyalet isimlerini konsola yazdir
+        WebElement state = driver.findElement(By.xpath("//select[@id='state']"));
+        Select stateDropdown = new Select(state);
+        List<WebElement> stateList = stateDropdown.getOptions(); //getOption() methodu ile tum state elemanlarini list e koyduk
+        stateList.stream().forEach(t -> System.out.println(t.getText()));// lambda ile print ettik. foreach ile de yapilabilir
+    }
 
-        }
-        @After
-    public void tearDown(){
+    @Test
+    public void getSelectedOptionsTest() {
+        //State dropdown indaki varsayilan secili secenegin 'Select a State' oldugunu verify(dogrulama) edelim
+        WebElement state = driver.findElement(By.xpath("//select[@id='state']"));
+        Select stateDropdown = new Select(state);
+        String varsayilanText = stateDropdown.getFirstSelectedOption().getText(); //getFirstSelectedOption() secili olan elementi return eder
+        Assert.assertEquals("Select a State", varsayilanText);
+
+    }
+
+    @After
+    public void tearDown() {
 
         driver.close();
-        }
+    }
 
         /*
         1.What is dropdown? Dropdown nedir?
@@ -111,10 +115,6 @@ iii)Rapor hazırlarken, manuel testler icin ekran goruntusunu de JIRA'ya eklemek
          Ornek:Gun olarak  10'u sectik ama ya secilmediyse?
          getFirstSelectedOption() secili olan secenegi return eder
          */
-
-
-
-
 
 
 }

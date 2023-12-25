@@ -73,10 +73,10 @@ public class C01_MavenFirstTest {
         driver.findElement(By.xpath("//*[@id='pay_saved_payees']")).click();
 
         //10. “The payment was successfully submitted.” mesajinin ciktigini control edin
-        WebElement payment= driver.findElement(By.xpath("//*[text()='The payment was successfully submitted.']"));
-        if (payment.isDisplayed()){
+        WebElement payment = driver.findElement(By.xpath("//*[text()='The payment was successfully submitted.']"));
+        if (payment.isDisplayed()) {
             System.out.println("mesaj testi PASSED");
-        }else System.out.println("mesaj testi FAILED");
+        } else System.out.println("mesaj testi FAILED");
 
         driver.close();
     }

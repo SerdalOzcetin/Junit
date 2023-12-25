@@ -12,8 +12,9 @@ import java.time.Duration;
 
 public class C06_ClassWork {
     WebDriver driver;
+
     @Before
-    public void setUp(){
+    public void setUp() {
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -29,21 +30,21 @@ public class C06_ClassWork {
     @Test
 
     public void teat01() throws InterruptedException {
-         // Gerekli yapiyi olusturun ve aşağıdaki görevi tamamlayın.
-         //       - https://www.facebook.com adresine gidin
+        // Gerekli yapiyi olusturun ve aşağıdaki görevi tamamlayın.
+        //       - https://www.facebook.com adresine gidin
         driver.get("https://www.facebook.com");
-         //- Cookies’i kabul edin
+        //- Cookies’i kabul edin
 
-         // - “Create an Account” button’una basin
+        // - “Create an Account” button’una basin
         driver.findElement(By.xpath("(//*[@role='button'])[2]")).click();
 
-         //- “radio buttons” elementlerini locate edin
+        //- “radio buttons” elementlerini locate edin
         WebElement kadin = driver.findElement(By.xpath("(//*[@class='_8esa'])[1]"));
         WebElement erkek = driver.findElement(By.xpath("(//*[@class='_58mt'])[2]"));
         WebElement ozel = driver.findElement(By.xpath("(//*[@class='_58mt'])[3]"));
 
-         // - Secili degilse cinsiyet butonundan size uygun olani secin
-        if (!erkek.isSelected()){
+        // - Secili degilse cinsiyet butonundan size uygun olani secin
+        if (!erkek.isSelected()) {
             erkek.click();
         }
         Thread.sleep(1000);

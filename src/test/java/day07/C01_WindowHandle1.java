@@ -23,7 +23,7 @@ public class C01_WindowHandle1 extends TestBase {
 
         String actualTitle = driver.getTitle();
         String expectedTitle = "The Internet";
-        Assert.assertEquals(actualTitle,expectedTitle);
+        Assert.assertEquals(actualTitle, expectedTitle);
 
         driver.findElement(By.xpath("//*[text()='Click Here']")).click();
 
@@ -31,25 +31,26 @@ public class C01_WindowHandle1 extends TestBase {
         Set<String> allWindowHandles = driver.getWindowHandles();
         System.out.println(allWindowHandles);
 
-        for (String eachHandle : allWindowHandles){
-            if (!eachHandle.equals(window1Handle)){
+        for (String eachHandle : allWindowHandles) {
+            if (!eachHandle.equals(window1Handle)) {
                 driver.switchTo().window(eachHandle);
             }
         }
         // bu noktada driver 2. pencerede
+
         String window2Title = driver.getTitle();
-        Assert.assertEquals("New Window",window2Title);
+        Assert.assertEquals("New Window", window2Title);
 
         String window2Handle = driver.getWindowHandle();
 
-       driver.switchTo().window(window1Handle);//1i windowa geciş yapıyoruz.
+        driver.switchTo().window(window1Handle);//1i windowa geciş yapıyoruz.
         Thread.sleep(3000);
         driver.switchTo().window(window2Handle);
         Thread.sleep(3000);
         driver.switchTo().window(window1Handle);
 
 
-        }
+    }
 
 
 }

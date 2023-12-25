@@ -22,9 +22,9 @@ public class C01_TekrarTesti {
         //3- cookies uyarisini kabul ederek kapatin
         //4 Sayfa basliginin “Google” ifadesi icerdigini test edin
         String title = driver.getTitle();
-        if (title.contains("Google")){
+        if (title.contains("Google")) {
             System.out.println("title testi passed");
-        }else System.out.println("title testi faıled");
+        } else System.out.println("title testi faıled");
 
         //5 Arama cubuguna “Nutella” yazip aratin
         WebElement aramaMotoru = driver.findElement(By.xpath("//textarea[@class='gLFyf']"));
@@ -39,9 +39,9 @@ public class C01_TekrarTesti {
         //7 sonuc sayisinin 10 milyon’dan fazla oldugunu test edin
         double sonuc = Integer.parseInt(aramaSonucu);
 
-        if (sonuc>10000000){
+        if (sonuc > 10000000) {
             System.out.println("on milyondan büyük.");
-        }else System.out.println("on milyondan küçük.");
+        } else System.out.println("on milyondan küçük.");
 
 
         //8 Sayfayi kapatin

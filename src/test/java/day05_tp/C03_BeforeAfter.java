@@ -10,27 +10,31 @@ import java.time.Duration;
 
 public class C03_BeforeAfter {
     WebDriver driver;
-    @Before
-    public void setUp(){
 
-        driver= new ChromeDriver();
+    @Before
+    public void setUp() {
+
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
-       // @Before notasyanunun kullanildigi method'a genelde setup( ) ismi verilir.
-       // @after notasyanunun kullanildigi metoda genelde teardown() ismi verilir
+        // @Before notasyanunun kullanildigi method'a genelde setup( ) ismi verilir.
+        // @after notasyanunun kullanildigi metoda genelde teardown() ismi verilir
 
     }
+
     @After
-    public void tearDown(){
+    public void tearDown() {
         driver.close();
     }
+
     @Test
-    public void test01(){
+    public void test01() {
         driver.get("https://www.amazon.com");
     }
+
     @Test
-    public void test02(){
+    public void test02() {
         driver.get("https://techproeducation.com");
     }
 

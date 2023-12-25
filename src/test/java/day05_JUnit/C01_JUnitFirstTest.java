@@ -8,7 +8,7 @@ import java.time.Duration;
 
 public class C01_JUnitFirstTest {
     @Test
-    public  void test01(){
+    public void test01() {
 
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
