@@ -1,6 +1,6 @@
 package day05_JUnit;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -16,7 +16,7 @@ public class C07_Assertions {
     WebDriver driver;
     @Before
     public void setUp(){
-        WebDriverManager.chromedriver().setup();
+
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
@@ -25,7 +25,7 @@ public class C07_Assertions {
 
     @After
     public void tearDown() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         driver.close();
     }
 
@@ -59,6 +59,6 @@ public class C07_Assertions {
     public void test04(){
         String actualTitle = driver.getTitle();
         String expectedTitle = "youtube";
-        Assert.assertFalse(actualTitle.contains("youtube"));
+        Assert.assertFalse(actualTitle.contains(expectedTitle));
     }
 }

@@ -1,6 +1,5 @@
 package day04_Maven;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import net.bytebuddy.asm.Advice;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,10 +11,9 @@ import java.util.List;
 
 public class C01_MavenFirstTest {
     public static <Webdriver> void main(String[] args) {
-        WebDriverManager.chromedriver().setup();
+
         WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
 
         /*
         // Class Work Amazon Search Test

@@ -1,6 +1,6 @@
 package day06_tp;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -41,7 +41,7 @@ iii)Rapor hazırlarken, manuel testler icin ekran goruntusunu de JIRA'ya eklemek
     //Eger test sinifinda birden fazla method olusturulmussa @Before kullanilir
     @Before
     public void setup(){
-        WebDriverManager.chromedriver().setup();
+
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));

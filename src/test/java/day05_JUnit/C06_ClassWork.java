@@ -1,6 +1,6 @@
 package day05_JUnit;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -14,10 +14,16 @@ public class C06_ClassWork {
     WebDriver driver;
     @Before
     public void setUp(){
-        WebDriverManager.chromedriver().setup();
+
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+    }
+
+    @After
+    public void tearDown() throws InterruptedException {
+        Thread.sleep(1000);
+        driver.close();
     }
 
     @Test
@@ -40,11 +46,11 @@ public class C06_ClassWork {
         if (!erkek.isSelected()){
             erkek.click();
         }
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         kadin.click();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         ozel.click();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         erkek.click();
 
     }

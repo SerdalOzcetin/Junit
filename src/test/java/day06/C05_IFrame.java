@@ -24,16 +24,16 @@ public class C05_IFrame extends TestBase {
         //"Applications lists" yazısının oldugunu test edın.
         //"Applications lists iframe in içinde iframe switch yapmamaız lazım"
         driver.switchTo().frame(0);// index 0 dan baslar ilk iframe switch yapıyoruz.
-        Thread.sleep(3000);
-        String içmetin = driver.findElement(By.xpath("//h1[.='Applications lists']")).getText();
+        Thread.sleep(2000);
+        String icMetin = driver.findElement(By.xpath("//h1[.='Applications lists']")).getText();
         String expectedText1 = "Applications lists";
 
-        Assert.assertTrue(içmetin.contains(expectedText1));
+        Assert.assertTrue(icMetin.contains(expectedText1));
 
 
         // son olarak footer dakı "Powered By" yazısının varlıgını test edın
         driver.switchTo().defaultContent();
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         WebElement footer = driver.findElement(By.xpath("//p[text()='Povered By']"));
 
         Assert.assertTrue(footer.isDisplayed());

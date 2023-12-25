@@ -1,6 +1,6 @@
 package day04_Maven;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -12,11 +12,8 @@ import java.time.Duration;
 
 public class C01_TekrarTesti {
     public static void main(String[] args) {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
+        WebDriver driver = new ChromeDriver();
         //1-C01_TekrarTesti isimli bir class olusturun
 
         //2- https://www.google.com/ adresine gidin
@@ -30,7 +27,7 @@ public class C01_TekrarTesti {
         }else System.out.println("title testi faıled");
 
         //5 Arama cubuguna “Nutella” yazip aratin
-        WebElement aramaMotoru = driver.findElement(By.xpath("//input[@class='gLFyf']"));
+        WebElement aramaMotoru = driver.findElement(By.xpath("//textarea[@class='gLFyf']"));
         aramaMotoru.sendKeys("Nutella");
         aramaMotoru.sendKeys(Keys.ENTER);
 

@@ -1,5 +1,5 @@
 package utilities;
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.apache.commons.io.FileUtils;
 import org.junit.After;
 import org.junit.Before;
@@ -27,7 +27,7 @@ public abstract class TestBase {
     //    setUp
     @Before
     public void setup()  {
-        WebDriverManager.chromedriver().setup();
+
         driver = new ChromeDriver();
 //        driver=WebDriverManager.chromedriver().create();
         driver.manage().window().maximize();
